@@ -1,0 +1,37 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Adding transitions for theme toggle */
+:root {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.dark {
+  --background: #111;
+  --foreground: #eee;
+}
+
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap; /* Prevents wrapping */
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%); /* Start from right side */
+  }
+  100% {
+    transform: translateX(-100%); /* Move out of the left side */
+  }
+}
+
